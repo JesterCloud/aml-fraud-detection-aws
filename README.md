@@ -29,21 +29,23 @@ S3 Input → Lambda (scoring) → DynamoDB + S3 Output
 ## --- Risk scoring model
 A transaction can trigger multiple signals at once but each transaction is evaluated against seven risk signals. Signals are independent
 
-|   Signal              |   Description                                |  Weight |
-| `geo_mismatch`        | Card country doesn't match payment country   |     +20 |
-| `ip_billing_mismatch` | IP address doesn't match billing address     |     +20 |
-| `high_velocity`       | Too many transactions in a short time window |     +25 |
-| `vpn_usage`          | User is masking their real location           |     +15 |
-| `chargeback_history` | Account has prior fraudulent chargebacks      |     +30 |
-| `new_account`        | Account created less than 7 days ago          |     +10 |
-| `high_amount`        | Amount is unusually high for this account profile | +15 |
+| Signal | Description | Weight |
+|---|---|---|
+| `geo_mismatch` | Card country doesn't match payment country | +20 |
+| `ip_billing_mismatch` | IP address doesn't match billing address | +20 |
+| `high_velocity` | Too many transactions in a short time window | +25 |
+| `vpn_usage` | User is masking their real location | +15 |
+| `chargeback_history` | Account has prior fraudulent chargebacks | +30 |
+| `new_account` | Account created less than 7 days ago | +10 |
+| `high_amount` | Amount is unusually high for this account profile | +15 |
 
 ## Decision thresholds
-| Score  |  Decision       | What happens |
-| 0 – 29 | ✅ APPROVE      | Transaction goes through normally |
-| 30 – 59|   REVIEW        | Flagged for manual analyst review |
-| 60 – 79|   3DS_REQUIRED  | Customer is challenged with strong authentication |
-| 80+    | 🚨 BLOCK       | Transaction blocked + SNS alert fired immediately |
+| Score | Decision | What happens |
+|---|---|---|
+| 0 – 29 | ✅ APPROVE | Transaction goes through normally |
+| 30 – 59 | 👀 REVIEW | Flagged for manual analyst review |
+| 60 – 79 | 🔐 3DS_REQUIRED | Customer challenged with strong authentication |
+| 80+ | 🚨 BLOCK | Transaction blocked + SNS alert fired immediately |
 
 
 ## --- Project structure
