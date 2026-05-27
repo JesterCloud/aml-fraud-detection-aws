@@ -1,4 +1,5 @@
 # AML Fraud Detection Pipeline on AWS
+![AML Fraud Detection Pipeline](docs/architecture.png.png)
 
 A real-time AML transaction scoring engine built on AWS, designed to detect suspicious financial activity using a multi-signal risk model. Transactions are scored automatically as they arrive, and high-risk cases trigger immediate alerts.
 
