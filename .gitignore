@@ -1,0 +1,25 @@
+# Terraform
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Lambda
+lambda/handler.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Debug scripts
+scripts/check_*.py
+scripts/invoke_*.py
+scripts/reupload_*.py
+
+# OS
+.DS_Store
+Thumbs.db
