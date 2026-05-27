@@ -49,20 +49,22 @@ A transaction can trigger multiple signals at once but each transaction is evalu
 
 
 ## --- Project structure
+```
 aml-fraud-detection-aws/
 ├── terraform/
-│   ├── provider.tf       (LocalStack endpoints)
-│   ├── main.tf           All AWS resources
-│   ├── variables.tf      
-│   └── outputs.tf        Resource names printed after deploy
+│   ├── provider.tf       # AWS provider + LocalStack endpoints
+│   ├── main.tf           # Infrastructure resources
+│   ├── variables.tf      # Values
+│   └── outputs.tf        # Resource names after deploy
 ├── lambda/
-│   └── handler.py        Scoring engine — the core logic
+│   └── handler.py        # Scoring logic
 ├── data/
-│   └── transactions.csv  Dataset (20 transactions)
+│   └── transactions.csv  # Test dataset (CSV with 20 transactions)
 ├── scripts/
-│   └── test_pipeline.py  End-to-end test script
+│   └── test_pipeline.py  # Test script
 └── docs/
-└── architecture.png      architecture diagram
+    └── architecture.png  # Architecture diagram
+```
 
 
 ## Running locally
