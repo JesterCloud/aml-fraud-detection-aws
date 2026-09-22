@@ -1,5 +1,11 @@
 # Threat Model — AML Fraud Detection Pipeline (AWS)
 
+**Owner:** Giovanny Galindo
+**Version:** 1.0
+**Date:** 2026-09-22
+**Reviewed by:** pending peer review
+**Next review:** 2027-09-22, or sooner on any architecture change
+
 **Status:** lab/portfolio project. **Not a production security assessment.**
 **Analyzed at commit:** branch `docs/threat-model`, code under `terraform/`, `lambda/`, `scripts/`, `data/`.
 
