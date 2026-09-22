@@ -109,5 +109,8 @@ Fraud detection is one of those domains where the gap between theory and practic
 The signal weights are based on real fraud typologies used in payment risk teams. The thresholds (30/60/80) reflect common industry cutoffs for review queues and 3DS authentication triggers.
 
 
+## Security
+This project has a threat model (STRIDE analysis, attack tree, and severity-ranked findings) — see [docs/threat-model.md](docs/threat-model.md).
+
 ## Author: **Giovanny Galindo**
 [LinkedIn](https://www.linkedin.com/in/giogalindo470/) · [GitHub](https://github.com/JesterCloud)
